@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="XPSBD — Professional XPS Extruded Polystyrene Backer Board Manufacturer. Waterproof, lightweight tile underlayment and insulation boards.">
+<title>XPSBD — XPS Backer Board Manufacturer</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --color-charcoal: #2d2d2d;
+  --color-orange: #e8751a;
+  --color-orange-dark: #c45d0e;
+  --color-cream: #f7f4f0;
+  --color-white: #ffffff;
+  --color-gray-light: #e8e6e3;
+  --color-gray-mid: #6b6b6b;
+  --color-gray-dark: #3a3a3a;
+  --font-heading: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-body: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  color: var(--color-charcoal);
+  background: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Navigation */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-gray-light);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+nav .logo { font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--color-charcoal); text-decoration: none; }
+nav .logo span { color: var(--color-orange); }
+nav .links { display: flex; gap: 2rem; list-style: none; }
+nav .links a { text-decoration: none; color: var(--color-gray-mid); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+nav .links a:hover { color: var(--color-orange); }
+.menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+
+/* Sections */
+section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+section:first-of-type { padding-top: calc(5rem + 60px); }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
+.hero h1 span { color: var(--color-orange); }
+.hero p { font-size: 1.1rem; color: var(--color-gray-mid); margin-bottom: 2rem; max-width: 460px; }
+.hero .cta-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn {
+  display: inline-block; padding: 0.75rem 1.75rem; border-radius: 6px;
+  font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.2s;
+  cursor: pointer; border: none;
+}
+.btn-primary { background: var(--color-orange); color: white; }
+.btn-primary:hover { background: var(--color-orange-dark); }
+.btn-outline { border: 2px solid var(--color-charcoal); color: var(--color-charcoal); background: transparent; }
+.btn-outline:hover { background: var(--color-charcoal); color: white; }
+.hero-image {
+  background: var(--color-cream); border-radius: 8px;
+  aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
+  color: var(--color-gray-mid); font-size: 0.9rem;
+  overflow: hidden;
+}
+.hero-image img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+/* Section headings */
+.section-title {
+  font-size: 2rem; font-weight: 700; letter-spacing: -0.02em;
+  text-align: center; margin-bottom: 0.5rem;
+}
+.section-subtitle {
+  text-align: center; color: var(--color-gray-mid); margin-bottom: 3rem;
+  font-size: 1.05rem;
+}
+
+/* Specs table */
+.specs-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.specs-table thead { background: var(--color-charcoal); color: white; }
+.specs-table th { padding: 0.9rem 1rem; text-align: left; font-weight: 600; font-size: 0.9rem; }
+.specs-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--color-gray-light); }
+.specs-table tbody tr:hover { background: var(--color-cream); }
+
+/* Selling points */
+.selling-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.selling-card { text-align: center; padding: 2rem 1.5rem; border-radius: 8px; border: 1px solid var(--color-gray-light); transition: box-shadow 0.2s; }
+.selling-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.selling-card .icon {
+  width: 56px; height: 56px; margin: 0 auto 1.25rem;
+  background: var(--color-cream); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+}
+.selling-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 600; }
+.selling-card p { font-size: 0.9rem; color: var(--color-gray-mid); }
+
+/* Factory section */
+.factory-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.factory-image {
+  background: var(--color-cream); border-radius: 8px;
+  aspect-ratio: 3/2; display: flex; align-items: center; justify-content: center;
+  color: var(--color-gray-mid); font-size: 0.9rem;
+}
+.factory-image img {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 8px;
+}
+.factory-text h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+.factory-text p { color: var(--color-gray-mid); margin-bottom: 0.75rem; font-size: 0.95rem; }
+.factory-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+.factory-stat h4 { font-size: 1.8rem; color: var(--color-orange); font-weight: 700; }
+.factory-stat p { font-size: 0.85rem; color: var(--color-gray-mid); margin-top: 0.25rem; }
+
+/* Contact */
+.contact { background: var(--color-cream); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+.contact-info h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; }
+.contact-info .item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; font-size: 0.95rem; }
+.contact-info .item .label { font-weight: 600; min-width: 70px; }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.contact-form input, .contact-form textarea {
+  padding: 0.75rem 1rem; border: 1px solid var(--color-gray-light);
+  border-radius: 6px; font-size: 0.95rem; font-family: var(--font-body);
+}
+.contact-form textarea { min-height: 120px; resize: vertical; }
+.contact-form button { align-self: flex-start; }
+
+/* Footer */
+footer {
+  text-align: center; padding: 2rem; font-size: 0.85rem;
+  color: var(--color-gray-mid); border-top: 1px solid var(--color-gray-light);
+}
+
+/* Divider */
+.divider { height: 1px; background: var(--color-gray-light); max-width: 1100px; margin: 0 auto; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  section { padding: 3rem 1.25rem; }
+  .hero { grid-template-columns: 1fr; gap: 2rem; }
+  .hero h1 { font-size: 2rem; }
+  .selling-grid { grid-template-columns: 1fr; }
+  .factory-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  nav .links { display: none; }
+  nav .links.open { display: flex; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: white; padding: 1rem 2rem; border-bottom: 1px solid var(--color-gray-light); }
+  .menu-toggle { display: block; }
+  .factory-stats { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .factory-stat h4 { font-size: 1.4rem; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.7rem; }
+  .btn { width: 100%; text-align: center; }
+  .specs-table { font-size: 0.82rem; }
+  .specs-table th, .specs-table td { padding: 0.6rem 0.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">XPS<span>BD</span></a>
+  <button class="menu-toggle" onclick="document.querySelector('nav .links').classList.toggle('open')" aria-label="Menu">☰</button>
+  <ul class="links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#specs">Specifications</a></li>
+    <li><a href="#factory">Factory</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div>
+    <h1>Professional <span>XPS Backer Board</span> Manufacturer</h1>
+    <p>Waterproof, lightweight, and easy-to-cut extruded polystyrene boards for tile underlayment, wall insulation, and wet-area construction.</p>
+    <div class="cta-group">
+      <a href="#contact" class="btn btn-primary">Request Quote</a>
+      <a href="#specs" class="btn btn-outline">View Specs</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='450' viewBox='0 0 600 450'%3E%3Crect fill='%23f0ebe3' width='600' height='450'/%3E%3Crect x='80' y='80' width='440' height='290' rx='4' fill='%23e8e0d5' stroke='%23d4c9b8' stroke-width='2'/%3E%3Crect x='130' y='130' width='340' height='190' rx='2' fill='%23f7f3ed'/%3E%3Ctext x='300' y='225' text-anchor='middle' fill='%23958b7e' font-family='system-ui,sans-serif' font-size='16'%3EXPS Backer Board%3C/text%3E%3Ctext x='300' y='255' text-anchor='middle' fill='%23b8ae9f' font-family='system-ui,sans-serif' font-size='12'%3EProduct image placeholder%3C/text%3E%3Cline x1='150' y1='300' x2='450' y2='300' stroke='%23d4c9b8' stroke-width='1'/%3E%3C/svg%3E" alt="XPS Backer Board product" loading="eager">
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Selling Points -->
+<section id="products">
+  <h2 class="section-title">Why XPS Backer Board</h2>
+  <p class="section-subtitle">Engineered for demanding construction environments</p>
+  <div class="selling-grid">
+    <div class="selling-card">
+      <div class="icon">💧</div>
+      <h3>Waterproof</h3>
+      <p>Closed-cell structure with <0.3% water absorption. Ideal for wet areas, shower bases, and exterior applications.</p>
+    </div>
+    <div class="selling-card">
+      <div class="icon">🪶</div>
+      <h3>Lightweight</h3>
+      <p>At 28–45 kg/m³ density, XPS boards are easy to transport, handle, and install — reducing labor cost.</p>
+    </div>
+    <div class="selling-card">
+      <div class="icon">✂️</div>
+      <h3>Easy to Cut</h3>
+      <p>Score and snap with a utility knife. No dust, no special tools. Clean edges every time.</p>
+    </div>
+    <div class="selling-card">
+      <div class="icon">🔥</div>
+      <h3>Thermal Insulation</h3>
+      <p>Low thermal conductivity (0.028–0.034 W/m·K) provides excellent insulation for walls and floors.</p>
+    </div>
+    <div class="selling-card">
+      <div class="icon">💪</div>
+      <h3>High Compressive Strength</h3>
+      <p>150–700 kPa range to meet different load-bearing requirements, from residential to commercial.</p>
+    </div>
+    <div class="selling-card">
+      <div class="icon">📐</div>
+      <h3>Custom Sizes</h3>
+      <p>Available in thicknesses from 4mm to 20mm, custom dimensions and surface finishes on request.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Specs Table -->
+<section id="specs">
+  <h2 class="section-title">Technical Specifications</h2>
+  <p class="section-subtitle">Conforming to ASTM C578, EN 13164, and GB/T standards</p>
+  <div style="overflow-x:auto;">
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Value Range</th>
+          <th>Test Standard</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Density</td><td>28 – 45 kg/m³</td><td>ASTM C578 Type IV / X</td></tr>
+        <tr><td>Compressive Strength</td><td>150 – 700 kPa</td><td>ASTM D1621 / EN 826</td></tr>
+        <tr><td>Thermal Conductivity</td><td>0.028 – 0.034 W/(m·K)</td><td>ASTM C518 / EN 12667</td></tr>
+        <tr><td>Water Absorption (vol)</td><td>&lt; 0.3%</td><td>ASTM C272 / EN 12087</td></tr>
+        <tr><td>Dimensional Stability</td><td>&lt; 2% @ 70°C</td><td>ASTM D2126 / EN 1604</td></tr>
+        <tr><td>Fire Classification</td><td>B1 / B2 (EN) / Class A (ASTM)</td><td>EN 13501-1 / ASTM E84</td></tr>
+        <tr><td>Available Thicknesses</td><td>4, 6, 10, 12, 20 mm</td><td>Custom available</td></tr>
+        <tr><td>Standard Sheet Sizes</td><td>600×1200, 600×1250, 1200×2400 mm</td><td>Custom available</td></tr>
+        <tr><td>Surface Options</td><td>Smooth, embossed, non-woven fabric laminated</td><td>On request</td></tr>
+        <tr><td>Edge Profile</td><td>Square, shiplap, tongue &amp; groove</td><td>On request</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Factory -->
+<section id="factory">
+  <h2 class="section-title">Our Factory</h2>
+  <p class="section-subtitle">Modern production lines with consistent quality control</p>
+  <div class="factory-grid">
+    <div class="factory-image">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect fill='%23e8e0d5' width='600' height='400'/%3E%3Crect x='120' y='80' width='360' height='200' rx='4' fill='%23d4c9b8'/%3E%3Crect x='150' y='110' width='100' height='140' rx='2' fill='%23c4b8a5'/%3E%3Crect x='270' y='110' width='180' height='60' rx='2' fill='%23c4b8a5'/%3E%3Crect x='270' y='190' width='180' height='60' rx='2' fill='%23c4b8a5'/%3E%3Ctext x='300' y='340' text-anchor='middle' fill='%23958b7e' font-family='system-ui,sans-serif' font-size='13'%3EFactory photo placeholder%3C/text%3E%3C/svg%3E" alt="XPSBD Factory" loading="lazy">
+    </div>
+    <div class="factory-text">
+      <h3>Manufacturing Excellence</h3>
+      <p>Our production facility is equipped with advanced XPS extrusion lines featuring CO₂ foaming technology — environmentally friendly and delivering consistent board quality across every batch.</p>
+      <p>We maintain strict QC protocols from raw material inspection through to finished product testing, ensuring every shipment meets the specifications you require.</p>
+      <div class="factory-stats">
+        <div class="factory-stat"><h4>15+</h4><p>Years Experience</p></div>
+        <div class="factory-stat"><h4>30+</h4><p>Export Countries</p></div>
+        <div class="factory-stat"><h4>500K</h4><p>m³ Annual Capacity</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Get in Touch</h3>
+      <div class="item">
+        <span class="label">Email:</span>
+        <span>nfo@xpsbd.com</span>
+      </div>
+      <div class="item">
+        <span class="label">Web:</span>
+        <span>xpsbd.com</span>
+      </div>
+      <div class="item" style="margin-top:1.5rem;">
+        <p style="font-size:0.9rem; color: var(--color-gray-mid);">We respond to all inquiries within 24 hours. Please include your target specifications and quantity for a fast quotation.</p>
+      </div>
+    </div>
+    <form class="contact-form" action="https://formspree.io/f/example" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="company" placeholder="Company">
+      <textarea name="message" placeholder="Tell us about your requirements — thickness, size, quantity, target market..."></textarea>
+      <button type="submit" class="btn btn-primary">Send Inquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 XPSBD. All rights reserved. &nbsp;|&nbsp; nfo@xpsbd.com</p>
+</footer>
+
+</body>
+</html>
