@@ -165,6 +165,28 @@ footer {
   .specs-table { font-size: 0.82rem; }
   .specs-table th, .specs-table td { padding: 0.6rem 0.5rem; }
 }
+
+/* Modal */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,0.5); align-items: center; justify-content: center;
+}
+.modal-overlay.show { display: flex; }
+.modal-box {
+  background: white; border-radius: 8px; padding: 2.5rem 2rem;
+  text-align: center; max-width: 420px; width: 90%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+.modal-box .checkmark {
+  width: 64px; height: 64px; margin: 0 auto 1.25rem;
+  background: #c6f6d5; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.75rem; color: #2f855a;
+}
+.modal-box h3 { font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700; }
+.modal-box p { font-size: 0.95rem; color: var(--color-gray-mid); margin-bottom: 1.5rem; line-height: 1.6; }
+.modal-box .btn { cursor: pointer; }
+
 </style>
 </head>
 <body>
@@ -296,7 +318,15 @@ footer {
       <h3>Get in Touch</h3>
       <div class="item">
         <span class="label">Email:</span>
-        <span>nfo@xpsbd.com</span>
+        <span>info@xpsbd.com</span>
+      </div>
+      <div class="item">
+        <span class="label">WhatsApp:</span>
+        <span>+86 180 3210 9111</span>
+      </div>
+      <div class="item">
+        <span class="label"></span>
+        <span>+86 136 7499 4061</span>
       </div>
       <div class="item">
         <span class="label">Web:</span>
@@ -306,19 +336,49 @@ footer {
         <p style="font-size:0.9rem; color: var(--color-gray-mid);">We respond to all inquiries within 24 hours. Please include your target specifications and quantity for a fast quotation.</p>
       </div>
     </div>
-    <form class="contact-form" action="https://formspree.io/f/example" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
+    <form class="contact-form" action="https://formsubmit.co/info@xpsbd.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://xpsbd.com/?sent=1">
+      <input type="hidden" name="_subject" value="New Inquiry from XPSBD Website">
+      <input type="text" name="name" placeholder="Your Name *" required>
+      <input type="email" name="email" placeholder="Your Email *" required>
+      <input type="text" name="whatsapp" placeholder="WhatsApp Number">
+      <input type="tel" name="phone" placeholder="Phone Number">
       <input type="text" name="company" placeholder="Company">
-      <textarea name="message" placeholder="Tell us about your requirements — thickness, size, quantity, target market..."></textarea>
+      <textarea name="message" placeholder="Tell us about your requirements — thickness, size, quantity, target market..." required></textarea>
       <button type="submit" class="btn btn-primary">Send Inquiry</button>
     </form>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2026 XPSBD. All rights reserved. &nbsp;|&nbsp; nfo@xpsbd.com</p>
+  <p>&copy; 2026 XPSBD. All rights reserved. &nbsp;|&nbsp; info@xpsbd.com</p>
 </footer>
+
+<!-- Success Modal -->
+<div class="modal-overlay" id="success-modal">
+  <div class="modal-box">
+    <div class="checkmark">✓</div>
+    <h3>Inquiry Sent Successfully!</h3>
+    <p>Thank you for reaching out. We'll review your inquiry and get back to you within 24 hours.</p>
+    <button class="btn btn-primary" onclick="document.getElementById('success-modal').classList.remove('show')">Got It</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('sent') === '1') {
+    document.getElementById('success-modal').classList.add('show');
+    if (window.history.replaceState) {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+  }
+  document.getElementById('success-modal').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('show');
+  });
+})();
+</script>
 
 </body>
 </html>
