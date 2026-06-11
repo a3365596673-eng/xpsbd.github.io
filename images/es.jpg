@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>NoSuchKey</Code>
+  <Message>The specified key does not exist.</Message>
+  <RequestId>6A2A7F318F28BD3932199CD6</RequestId>
+  <HostId>xypt.oss-us-west-1.aliyuncs.com</HostId>
+  <Key>zengyi/2025/10/es.jpg</Key>
+  <EC>0040-00000024</EC>
+  <RecommendDoc>https://api.alibabacloud.com/troubleshoot?q=0040-00000024</RecommendDoc>
+</Error>
