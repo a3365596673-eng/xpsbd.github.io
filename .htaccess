@@ -1,0 +1,16 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ $1/index.html [L]
+
+# Redirect old huanengglobal.com to xpsbd.com
+RewriteCond %{HTTP_HOST} huanengglobal\.com$ [NC]
+RewriteRule ^(.*)$ https://xpsbd.com/$1 [R=301,L]
+
+# Redirect www to non-www
+RewriteCond %{HTTP_HOST} ^www\.xpsbd\.com [NC]
+RewriteRule ^(.*)$ https://xpsbd.com/$1 [L,R=301]
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
